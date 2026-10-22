@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Post-Stay Charges & Checkout</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="checkout-page">
+
+    <div class="container">
+
+        <h1>Post-Stay Charges & Checkout</h1>
+
+        <a href="index.html" class="open-button">
+            Back to Dashboard
+        </a>
+
+
+        <!-- ============================= -->
+        <!-- POST-STAY CHARGES -->
+        <!-- ============================= -->
+
+        <h2>Post-Stay Charges</h2>
+
+        <form id="chargeForm">
+
+            <label>Payment / Booking:</label>
+
+            <select id="charge_payment_id" required>
+                <option value="">
+                    Select Payment
+                </option>
+            </select>
+
+
+            <label>Room Damage:</label>
+
+            <input
+                type="number"
+                id="room_damage"
+                min="0"
+                value="0"
+                required
+            >
+
+
+            <label>Missing Item:</label>
+
+            <input
+                type="number"
+                id="missing_item"
+                min="0"
+                value="0"
+                required
+            >
+
+
+            <label>Deep Cleaning:</label>
+
+            <input
+                type="number"
+                id="deep_cleaning"
+                min="0"
+                value="0"
+                required
+            >
+
+
+            <button type="submit">
+                Add / Update Charges
+            </button>
+
+        </form>
+
+
+        <p id="chargeMessage"></p>
+
+
+        <h2>Existing Post-Stay Charges</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Payment</th>
+                    <th>Booking</th>
+                    <th>Guest</th>
+                    <th>Room</th>
+                    <th>Room Damage</th>
+                    <th>Missing Item</th>
+                    <th>Deep Cleaning</th>
+                    <th>Total</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="chargeTableBody"></tbody>
+
+        </table>
+
+
+        <!-- ============================= -->
+        <!-- CHECKOUT -->
+        <!-- ============================= -->
+
+        <h2>Checkout & Final Bill</h2>
+
+        <table>
+
+            <thead>
+
+                <tr>
+                    <th>Booking</th>
+                    <th>Guest</th>
+                    <th>Room</th>
+                    <th>Booking Amount</th>
+                    <th>Paid Amount</th>
+                    <th>Extra Charges</th>
+                    <th>Grand Total</th>
+                    <th>Balance Due</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody id="checkoutTableBody"></tbody>
+
+        </table>
+
+    </div>
+
+<script>
+    if (localStorage.getItem("adminLoggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

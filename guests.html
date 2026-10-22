@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Guest Management</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            🏨 Hotel Management
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Dashboard
+                </a>
+            </li>
+
+            <li>
+                <a href="guests.html">
+                    Guests
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#rooms">
+                    Rooms
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#reservations">
+                    Reservations
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#employees">
+                    Employees
+                </a>
+            </li>
+
+            <li>
+                <a href="index.html#payments">
+                    Payments
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+    <!-- Main Content -->
+
+    <main class="guest-container">
+
+
+        <a href="index.html" class="back-button">
+            ← Back to Dashboard
+        </a>
+
+        <div class="page-header">
+            <h1>Guest Management</h1>
+        </div>
+
+        <p>
+            Add and manage hotel guests.
+        </p>
+
+
+        <!-- Add Guest Form -->
+
+        <div class="guest-form">
+
+            <h2>
+                Add New Guest
+            </h2>
+
+
+            <form id="guestForm">
+
+
+                <label>
+                    Guest Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter guest name"
+                    required
+                >
+
+
+                <label>
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter email"
+                >
+
+
+                <label>
+                    Personal Mail
+                </label>
+
+                <input
+                    type="email"
+                    id="pmail"
+                    placeholder="Enter personal mail"
+                >
+
+
+                <label>
+                    Phone
+                </label>
+
+                <input
+                    type="text"
+                    id="phone"
+                    maxlength="10"
+                    pattern="[0-9]{10}"
+                    placeholder="Enter 10-digit phone number"
+                >
+
+                <label>
+                    Address
+                </label>
+
+                <input
+                    type="text"
+                    id="address"
+                    placeholder="Enter address"
+                >
+
+
+                <button type="submit">
+                    Add Guest
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+        <!-- Guest List -->
+
+        <div class="guest-list">
+
+<h2>Guest List</h2>
+
+<input
+    type="text"
+    id="guestSearch"
+    placeholder="Search guest by name, email or phone..."
+    class="search-box"
+>
+
+<table>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Name</th>
+
+                        <th>Email</th>
+
+                        <th>Phone</th>
+
+                        <th>Address</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="guestTableBody">
+
+                    <!-- Guest data will appear here -->
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </main>
+
+<script>
+    if (localStorage.getItem("adminLoggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

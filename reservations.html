@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Reservation Management</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- Navigation -->
+
+    <nav class="navbar">
+
+        <h2>
+            Hotel Management System
+        </h2>
+
+        <div>
+
+            <a href="index.html">
+                Dashboard
+            </a>
+
+            <a href="guests.html">
+                Guests
+            </a>
+
+            <a href="rooms.html">
+                Rooms
+            </a>
+
+            <a href="reservations.html">
+                Reservations
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- Main Container -->
+
+    <div class="guest-container">
+
+        <a href="index.html" class="back-button">
+            ← Back to Dashboard
+        </a>
+
+        <div class="page-header">
+            <h1>Reservation Management</h1>
+        </div>
+
+        <p>
+            Create and manage hotel reservations.
+        </p>
+
+
+
+        <!-- Reservation Form -->
+
+        <div class="guest-form">
+
+            <h2>
+                Add New Reservation
+            </h2>
+
+
+            <form id="reservationForm">
+
+
+                <!-- Guest -->
+
+                <label>
+                    Select Guest
+                </label>
+
+                <select
+                    id="guest_id"
+                    required>
+
+                    <option value="">
+                        Select Guest
+                    </option>
+
+                </select>
+
+
+
+                <!-- Room -->
+
+                <label>
+                    Select Room
+                </label>
+
+                <select
+                    id="room_id"
+                    required>
+
+                    <option value="">
+                        Select Room
+                    </option>
+
+                </select>
+
+
+
+                <!-- Check In -->
+
+                <label>
+                    Check-In Date
+                </label>
+
+                <input
+                    type="date"
+                    id="check_in_date"
+                    required
+                >
+
+
+
+                <!-- Check Out -->
+
+                <label>
+                    Check-Out Date
+                </label>
+
+                <input
+                    type="date"
+                    id="check_out_date"
+                    required
+                >
+
+
+
+                <!-- Status -->
+
+                <label>
+                    Reservation Status
+                </label>
+
+                <select
+                    id="reservation_status"
+                    required>
+
+                    <option value="Pending">
+                        Pending
+                    </option>
+
+                    <option value="Confirmed">
+                        Confirmed
+                    </option>
+
+                    <option value="Cancelled">
+                        Cancelled
+                    </option>
+
+                </select>
+
+
+
+                <!-- Total -->
+
+                <label>
+                    Total Amount
+                </label>
+
+                <input
+                    type="number"
+                    id="total_amount"
+                    readonly
+                    placeholder="Automatically calculated"
+                >
+
+
+
+                <button type="submit">
+                    Add Reservation
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+
+        <!-- Reservation List -->
+
+        <div class="guest-list">
+
+            <h2>
+                Reservation List
+            </h2>
+            <input
+    type="text"
+    id="reservationSearch"
+    placeholder="Search reservation..."
+    class="search-box"
+>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Guest</th>
+
+                        <th>Room</th>
+
+                        <th>Check-In</th>
+
+                        <th>Check-Out</th>
+
+                        <th>Status</th>
+
+                        <th>Total</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody
+                    id="reservationTableBody">
+
+                </tbody>
+
+
+            </table>
+
+        </div>
+
+    </div>
+
+<script>
+    if (localStorage.getItem("adminLoggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

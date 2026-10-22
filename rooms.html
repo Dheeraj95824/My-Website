@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Room Management</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+
+    <nav class="navbar">
+
+        <h2>Hotel Management System</h2>
+
+        <div>
+
+            <a href="index.html">Dashboard</a>
+
+            <a href="guests.html">Guests</a>
+
+            <a href="rooms.html">Rooms</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Main Container -->
+
+    <div class="guest-container">
+
+        <a href="index.html" class="back-button">
+            ← Back to Dashboard
+        </a>
+
+        <div class="page-header">
+            <h1>Room Management</h1>
+        </div>
+
+        <p>Add and manage hotel rooms.</p>
+
+
+        <!-- Add Room Form -->
+
+        <div class="guest-form">
+
+            <h2>Add New Room</h2>
+
+            <form id="roomForm">
+
+                <label>Room Type</label>
+
+                <select id="room_type" required>
+
+                    <option value="">Select Room Type</option>
+
+                    <option value="Single">
+                        Single
+                    </option>
+
+                    <option value="Double">
+                        Double
+                    </option>
+
+                    <option value="Deluxe">
+                        Deluxe
+                    </option>
+
+                    <option value="Suite">
+                        Suite
+                    </option>
+
+                </select>
+
+
+                <label>Price</label>
+
+                <input
+                    type="number"
+                    id="price"
+                    placeholder="Enter room price"
+                    required
+                >
+
+
+                <label>Status</label>
+
+                <select id="status" required>
+
+                    <option value="Available">
+                        Available
+                    </option>
+
+                    <option value="Occupied">
+                        Occupied
+                    </option>
+
+                    <option value="Maintenance">
+                        Maintenance
+                    </option>
+
+                </select>
+
+
+                <label>Floor Number</label>
+
+                <input
+                    type="number"
+                    id="floor_no"
+                    placeholder="Enter floor number"
+                    required
+                >
+
+
+                <button type="submit">
+                    Add Room
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- Room List -->
+
+        <div class="guest-list">
+
+<h2>Room List</h2>
+
+<input
+    type="text"
+    id="roomSearch"
+    placeholder="Search room by type, status or floor..."
+    class="search-box"
+>
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>ID</th>
+
+                        <th>Room Type</th>
+
+                        <th>Price</th>
+
+                        <th>Status</th>
+
+                        <th>Floor</th>
+
+                        <th>Action</th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="roomTableBody">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+<script>
+    if (localStorage.getItem("adminLoggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

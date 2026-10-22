@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Hotel Management System</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <!-- Dashboard Header -->
+
+        <div class="dashboard-header">
+
+<header class="dashboard-header">
+
+            <div>
+                    <h1>Hotel Management System</h1>
+
+                    <p>
+                        Welcome, <span id="adminName"></span>
+                    </p>
+                </div>
+
+                <button
+                    onclick="logout()"
+                    class="logout-button"
+                >
+                    Logout
+                </button>
+
+            </header>
+
+            <p>
+                Manage guests, rooms, reservations,
+                employees, payments and checkout
+            </p>
+
+        </div>
+
+
+        <!-- Dashboard Cards -->
+
+<div class="cards">
+
+    <!-- Total Guests -->
+
+    <div class="card">
+
+        <h2>👤</h2>
+
+        <h3>Total Guests</h3>
+
+        <div
+            class="dashboard-number"
+            id="totalGuests">
+            0
+        </div>
+
+        <p>
+            Registered hotel guests
+        </p>
+
+        <a
+            href="guests.html"
+            class="open-button">
+            Manage
+        </a>
+
+    </div>
+
+
+    <!-- Total Rooms -->
+
+    <div class="card">
+
+        <h2>🛏️</h2>
+
+        <h3>Total Rooms</h3>
+
+        <div
+            class="dashboard-number"
+            id="totalRooms">
+            0
+        </div>
+
+        <p>
+            Hotel rooms
+        </p>
+
+        <a
+            href="rooms.html"
+            class="open-button">
+            Manage
+        </a>
+
+    </div>
+
+
+    <!-- Available Rooms -->
+
+    <div class="card">
+
+        <h2>✅</h2>
+
+        <h3>Available Rooms</h3>
+
+        <div
+            class="dashboard-number"
+            id="availableRooms">
+            0
+        </div>
+
+        <p>
+            Rooms ready for guests
+        </p>
+
+        <a
+            href="rooms.html"
+            class="open-button">
+            View Rooms
+        </a>
+
+    </div>
+
+
+    <!-- Occupied Rooms -->
+
+    <div class="card">
+
+        <h2>🔑</h2>
+
+        <h3>Occupied Rooms</h3>
+
+        <div
+            class="dashboard-number"
+            id="occupiedRooms">
+            0
+        </div>
+
+        <p>
+            Currently occupied
+        </p>
+
+        <a
+            href="rooms.html"
+            class="open-button">
+            View Rooms
+        </a>
+
+    </div>
+
+
+    <!-- Reservations -->
+
+    <div class="card">
+
+        <h2>📅</h2>
+
+        <h3>Reservations</h3>
+
+        <div
+            class="dashboard-number"
+            id="totalReservations">
+            0
+        </div>
+
+        <p>
+            Total reservations
+        </p>
+
+        <a
+            href="reservations.html"
+            class="open-button">
+            Manage
+        </a>
+
+    </div>
+
+
+    <!-- Employees -->
+
+    <div class="card">
+
+        <h2>👨‍💼</h2>
+
+        <h3>Employees</h3>
+
+        <div
+            class="dashboard-number"
+            id="totalEmployees">
+            0
+        </div>
+
+        <p>
+            Hotel employees
+        </p>
+
+        <a
+            href="employees.html"
+            class="open-button">
+            Manage
+        </a>
+
+    </div>
+
+
+    <!-- Payments -->
+
+    <div class="card">
+        <h2>💳</h2>
+        <h3>Payments</h3>
+        <div
+            class="dashboard-number"
+            id="totalPayments">
+            0
+        </div>
+        <p>
+            Payment records
+        </p>
+        <a
+            href="payments.html"
+            class="open-button">
+            Manage
+        </a>
+    </div>
+
+
+    <!-- Revenue -->
+
+    <div class="card">
+        <h2>💰</h2>
+        <h3>Total Revenue</h3>
+        <div
+            class="dashboard-number"
+            id="totalRevenue">
+            ₹0
+        </div>
+        <p>
+            Total payments received
+        </p>
+        <a
+            href="payments.html"
+            class="open-button">
+            View Payments
+        </a>
+    </div>
+
+
+    <!-- Checkout -->
+
+    <div class="card">
+        <h2>🚪</h2>
+        <h3>Checkout</h3>
+        <p>
+            Manage post-stay charges
+            and final checkout
+        </p>
+        <a
+            href="checkout.html"
+            class="open-button">
+            Open
+        </a>
+    </div>
+
+</div>
+<div class="dashboard-summary">
+
+    <div class="summary-box">
+
+        <h2>Room Occupancy</h2>
+
+        <p>
+            Current occupancy:
+            <strong id="occupancyPercentage">
+                0%
+            </strong>
+        </p>
+
+    </div>
+
+
+    <div class="summary-box">
+
+        <h2>Today's Date</h2>
+
+        <p id="todayDate">
+            Loading...
+        </p>
+
+    </div>
+
+
+    <div class="summary-box">
+
+        <h2>System Status</h2>
+
+        <p class="system-status">
+            ● System Online
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="dashboard-actions">
+
+    <button
+        onclick="loadDashboardStats()"
+        class="refresh-button"
+    >
+        🔄 Refresh Dashboard
+    </button>
+
+</div>
+
+
+        <!-- Footer -->
+
+        <div class="footer">
+
+            <p>
+                Hotel Management System
+                | DBMS Project
+            </p>
+
+            <p>
+                Three-Tier Architecture
+            </p>
+
+        </div>
+
+    </div>
+
+<script>
+    if (localStorage.getItem("adminLoggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
